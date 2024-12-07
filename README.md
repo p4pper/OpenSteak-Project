@@ -3,7 +3,6 @@
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
 
 <br />
 <div align="center">
@@ -16,7 +15,7 @@
   <p align="center">
     Understand how probablity works and why gambling is a scam
     <br />
-    <a href="https://github.com/othneildrew/Best-README-Template"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/harethpy/OpenSteak-Mines/wiki"><strong>Explore the docs »</strong></a>
     <br />
     <br />
     ·
@@ -61,7 +60,6 @@ Feel free to contribute to this repository.
 ### Built with
 - C# & .NET Framework 4.5 (can be ported to .NET Core)
 - WPF
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Getting Started
 
@@ -71,28 +69,17 @@ TODO Add explanation to set up
 
 TODO Instructions
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 ## Usage
 
-please refer to the [Documentation](https://example.com)_
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+please refer to the [Documentation](https://example.com)
 
 <!-- ROADMAP -->
 ## Roadmap
 
 - [x] Add Changelog
 - [x] Add back to top links
-- [ ] Add Additional Templates w/ Examples
-- [ ] Add "components" document to easily copy & paste sections of the readme
-- [ ] Multi-language Support
-    - [ ] Chinese
-    - [ ] Spanish
 
 See the [open issues](https://github.com/othneildrew/Best-README-Template/issues) for a full list of proposed features (and known issues).
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- CONTRIBUTING -->
 ## Contributing
@@ -106,8 +93,6 @@ Don't forget to give the project a star! Thanks again!
 
 Distributed under the CC BY-NC-ND 4.0. See `LICENSE` for more information.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
@@ -115,22 +100,18 @@ TODO - Add Acknowledgments
 
 * [Choose an Open Source License](https://choosealicense.com)
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=for-the-badge
-[contributors-url]: https://github.com/othneildrew/Best-README-Template/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/othneildrew/Best-README-Template.svg?style=for-the-badge
-[forks-url]: https://github.com/othneildrew/Best-README-Template/network/members
-[stars-shield]: https://img.shields.io/github/stars/othneildrew/Best-README-Template.svg?style=for-the-badge
-[stars-url]: https://github.com/othneildrew/Best-README-Template/stargazers
-[issues-shield]: https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=for-the-badge
-[issues-url]: https://github.com/othneildrew/Best-README-Template/issues
-[license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge
-[license-url]: https://github.com/othneildrew/Best-README-Template/blob/master/LICENSE.txt
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/othneildrew
+[contributors-shield]: https://img.shields.io/github/contributors/harethpy/OpenSteak-Mines.svg?style=for-the-badge
+[contributors-url]: https://github.com/harethpy/OpenSteak-Mines/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/harethpy/OpenSteak-Mines.svg?style=for-the-badge
+[forks-url]: https://github.com/harethpy/OpenSteak-Mines/network/members
+[stars-shield]: https://img.shields.io/github/stars/harethpy/OpenSteak-Mines.svg?style=for-the-badge
+[stars-url]: https://github.com/harethpy/OpenSteak-Mines/stargazers
+[issues-shield]: https://img.shields.io/github/issues/harethpy/OpenSteak-Mines.svg?style=for-the-badge
+[issues-url]: https://harethpy/OpenSteak-Mines/issues
+[license-shield]: https://img.shields.io/github/license/harethpy/OpenSteak-Mines.svg?style=for-the-badge
+[license-url]: https://github.com/harethpy/OpenSteak-Mines/blob/main/LICENSE
 [product-screenshot]: images/screenshot.png
 [Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
 [Next-url]: https://nextjs.org/
