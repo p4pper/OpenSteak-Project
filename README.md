@@ -19,20 +19,18 @@
     <br />
     <br />
     ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
+    <a href="https://github.com/harethpy/OpenSteak-Mines/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
     ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
+    <a href="https://github.com/harethpy/OpenSteak-Mines/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
   </p>
 </div>
-
-
 
 <!-- TABLE OF CONTENTS -->
 <details>
   <summary>Table of Contents</summary>
   <ol>
     <li><a href="#about-the-project">About The Project</a></li>
-    <li><a href="#set-up-and-compile">Getting Started</a></li>
+    <li><a href="#getting-started">Getting Started</a></li>
     <li><a href="#usage">Usage</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
@@ -40,8 +38,6 @@
     <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
 </details>
-
-
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
@@ -55,19 +51,13 @@ I have an explanation on how this works, and why actually you'll never profit or
 * **Raise Awareness:** Beyond coding, this project focuses on the addictive mechanics of gambling, and why it's actually a scam.
 
 Feel free to contribute to this repository.
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-### Built with
+**Built with**
 - C# & .NET Framework 4.5 (can be ported to .NET Core)
 - WPF
-
 ## Getting Started
 
 TODO Add explanation to set up
-
-### Set-up and Compile
-
-TODO Instructions
 
 ## Usage
 
