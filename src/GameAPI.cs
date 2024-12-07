@@ -1,11 +1,10 @@
 ﻿// <copyright file="GameAPI.cs" company="openSteak">
 // Copyright (c) openSteak. All rights reserved.
 // </copyright>
-namespace OpenSteakWPF
+namespace OpenSteakMines
 {
     using System;
     using System.IO;
-    using System.Windows;
 
     /// <summary>The main file to handle the game's logic and trigger CoreGUI events.</summary>
     public class GameAPI : GameLogic
@@ -81,7 +80,7 @@ namespace OpenSteakWPF
                 else
                 {
                     // TODO Replace this with a GUI call instead.
-                    MessageBox.Show("Please place a valid bet.");
+                   // MessageBox.Show("Please place a valid bet.");
                 }
             }
             else if (this.gameState == GameState.On && this.RevealedGems > 0)
@@ -134,14 +133,14 @@ namespace OpenSteakWPF
                 }
                 else
                 {
-                    MessageBox.Show("Insufficient balance.");
+                    //MessageBox.Show("Insufficient balance.");
                     this.gUI.RestartBetAmount();
                     this.currentBet = 0;
                 }
             }
             else
             {
-                MessageBox.Show("Invalid bet amount.");
+                //MessageBox.Show("Invalid bet amount.");
                 this.gUI.RestartBetAmount();
                 this.currentBet = 0;
             }

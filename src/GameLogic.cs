@@ -2,7 +2,7 @@
 // Copyright (c) openSteak. All rights reserved.
 // </copyright>
 
-namespace OpenSteakWPF
+namespace OpenSteakMines
 {
     using System;
     using System.Threading.Tasks;

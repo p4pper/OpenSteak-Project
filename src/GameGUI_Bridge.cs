@@ -1,4 +1,4 @@
-﻿namespace OpenSteakWPF
+﻿namespace OpenSteakMines
 {
     /// <summary>
     ///   <br />
