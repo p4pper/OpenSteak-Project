@@ -127,7 +127,7 @@ TODO - Add Acknowledgments
 [issues-shield]: https://img.shields.io/github/issues/harethpy/OpenSteak-Mines.svg?style=for-the-badge
 [issues-url]: https://harethpy/OpenSteak-Mines/issues
 [license-shield]: https://img.shields.io/github/license/harethpy/OpenSteak-Mines.svg?style=for-the-badge
-[license-url]: https://harethpy/OpenSteak-Mines/blob/main/LICENSE
+[license-url]: https://github.com/harethpy/OpenSteak-Mines/blob/main/LICENSE
 [product-screenshot]: images/screenshot.png
 [Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
 [Next-url]: https://nextjs.org/
