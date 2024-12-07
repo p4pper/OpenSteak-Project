@@ -13,7 +13,7 @@
   <h3 align="center">OpenSteak Project</h3>
 
   <p align="center">
-    Understand how probablity works and why gambling is a scam
+    Understand how probablity works and why gambling is a scam using C#
     <br />
     <a href="https://github.com/harethpy/OpenSteak-Mines/wiki"><strong>Explore the docs »</strong></a>
     <br />
