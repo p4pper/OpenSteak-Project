@@ -17,15 +17,15 @@
 //
 // This software is provided "as-is" without any warranties. The creator is not liable for any damage or loss caused by the use or misuse of the software.
 //
-using System;
-using System.IO;
-using System.Windows;
-
 /*
  *  This files is essential for the functions of the game, it also triggers GUI events via GameGUI_Bridge
  */
 namespace OpenSteakWPF
 {
+    using System;
+    using System.IO;
+    using System.Windows;
+
     public class GameAPI : GameLogic //Based off core
     {
         private const double defaultBalance = 5.0;
@@ -128,7 +128,7 @@ namespace OpenSteakWPF
 
         public void RestartGame()
         {
-            if ((double.TryParse(GUI.getBetAmount(), out currentBet) && currentBet > 0) || currentBet == 0)
+            if ((double.TryParse(GUI.GetBetAmountFromTextField(), out currentBet) && currentBet > 0) || currentBet == 0)
             {
                 if (currentBet <= balance)
                 {
@@ -137,7 +137,7 @@ namespace OpenSteakWPF
 
                     RevealedGems = 0;
                     gameState = GameState.On;
-                    MinesCount = GUI.getSetMinesAmount();
+                    MinesCount = GUI.GetSelectedMinesAmount();
                     Start();
                     GUI.initializeGrid(true);
                 }

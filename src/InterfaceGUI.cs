@@ -12,12 +12,20 @@
         void updateMultiplier();
         void updateBalance();
         void enableCashout();
+
+        /// <summary>
+        /// Changes the GUI components to their start state. This is when the game is restarted/stopped
+        /// </summary>
         void setComponentsToStart();
+
+        /// <summary>
+        /// Changes the GUI components to their cashout state. Note that this happens when game is started
+        /// </summary>
         void setComponentsToCashout();
 
         void restartBetAmount();
-        string getBetAmount();
+        string GetBetAmountFromTextField();
 
-        int getSetMinesAmount();
+        int GetSelectedMinesAmount();
     }
 }
