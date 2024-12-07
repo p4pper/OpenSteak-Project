@@ -124,7 +124,7 @@ TODO - Add Acknowledgments
 [forks-url]: https://github.com/harethpy/OpenSteak-Mines/network/members
 [stars-shield]: https://img.shields.io/github/stars/othneildrew/Best-README-Template.svg?style=for-the-badge
 [stars-url]: https://github.com/harethpy/OpenSteak-Mines/stargazers
-[issues-shield]: https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=for-the-badge
+[issues-shield]: https://img.shields.io/github/issues/harethpy/OpenSteak-Mines.svg?style=for-the-badge
 [issues-url]: https://harethpy/OpenSteak-Mines/issues
 [license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge
 [license-url]: https://harethpy/OpenSteak-Mines/blob/master/LICENSE
