@@ -117,6 +117,11 @@
         {
         }
 
+        /// <summary>Restarts the payout multiplier GUI.</summary>
+        protected virtual void RestartPayoutMultiplierGUI()
+        {
+        }
+
         /// <summary>Initializes the mines amount ComboBox GUI.</summary>
         protected virtual void InitializeMinesAmountComboBoxGUI()
         {

@@ -41,6 +41,7 @@ namespace OpenSteakWPF
             {
                 // Set balance to default
                 File.WriteAllText("balance.txt", DefaultBalance.ToString());
+                this.balance = DefaultBalance;
             }
 
             gUI.InitializeMinesAmountComboBox();

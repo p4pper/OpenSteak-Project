@@ -120,6 +120,7 @@ namespace OpenSteakWPF
             this.cashOutORStartButton.Content = "Start";
             this.cashOutORStartButton.IsEnabled = true;
             this.mineCombo.IsEnabled = true;
+            this.RestartPayoutMultiplierGUI();
         }
 
         /// <summary>
@@ -135,7 +136,7 @@ namespace OpenSteakWPF
         /// <summary>Updates the balance label in the GUI to reflect the current balance.</summary>
         protected override void UpdateBalanceGUI()
         {
-            this.balanceLabel.Content = "Balance: " + this.api.GetBalance().ToString("0.0000");
+            this.balanceLabel.Content = "Balance: " + this.api.GetBalance().ToString("0.00");
         }
 
         /// <summary>
@@ -175,6 +176,11 @@ namespace OpenSteakWPF
         protected override void RestartBetAmountGUI()
         {
             this.betAmountField.Text = "0.00";
+        }
+
+        protected override void RestartPayoutMultiplierGUI()
+        {
+            this.payoutMultiplierLabel.Content = "0.00x";
         }
 
         private Button CreateMineButtonGUI(bool enableMines, int row, int col)
