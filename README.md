@@ -118,15 +118,15 @@ TODO - Add Acknowledgments
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=for-the-badge
+[contributors-shield]: https://img.shields.io/github/contributors/harethpy/OpenSteak-Mines.svg?style=for-the-badge
 [contributors-url]: https://github.com/harethpy/OpenSteak-Mines/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/othneildrew/Best-README-Template.svg?style=for-the-badge
+[forks-shield]: https://img.shields.io/github/forks/harethpy/OpenSteak-Mines.svg?style=for-the-badge
 [forks-url]: https://github.com/harethpy/OpenSteak-Mines/network/members
-[stars-shield]: https://img.shields.io/github/stars/othneildrew/Best-README-Template.svg?style=for-the-badge
+[stars-shield]: https://img.shields.io/github/stars/harethpy/OpenSteak-Mines.svg?style=for-the-badge
 [stars-url]: https://github.com/harethpy/OpenSteak-Mines/stargazers
 [issues-shield]: https://img.shields.io/github/issues/harethpy/OpenSteak-Mines.svg?style=for-the-badge
 [issues-url]: https://harethpy/OpenSteak-Mines/issues
-[license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge
+[license-shield]: https://img.shields.io/github/license/harethpy/OpenSteak-Mines.svg?style=for-the-badge
 [license-url]: https://harethpy/OpenSteak-Mines/blob/master/LICENSE
 [product-screenshot]: images/screenshot.png
 [Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
