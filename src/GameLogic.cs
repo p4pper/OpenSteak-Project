@@ -1,22 +1,37 @@
-﻿using System;
-using System.Threading.Tasks;
+﻿// <copyright file="GameLogic.cs" company="openSteak">
+// Copyright (c) openSteak. All rights reserved.
+// </copyright>
 
 namespace OpenSteakWPF
 {
+    using System;
+    using System.Threading.Tasks;
+    using System.Windows;
+
+    /// <summary>
+    /// Initializes a new instance of the <see cref="GameLogic"/> class.
+    /// </summary>
     public class GameLogic
     {
-        // Configuration
-        public int RevealedGems { get; set; }
-        public int MinesCount { get; set; } // Number of mines to place
-        private const double houseEdge = 0.1; // Example house edge (10%)
-        protected const int gridSize = 5; // Fixed grid size
+        /// <summary>The grid size</summary>
+        protected const int GridSize = 5; // Fixed grid size
 
-        // Game
-        private string[] layout;
+        /// <summary>The house edge</summary>
+        private const double HouseEdge = 0.1; // Example house edge (10%)
+
+        private readonly string[] layout;
+        /// <summary>Gets or sets the revealed gems.</summary>
+        /// <value>The revealed gems.</value>
+        public int RevealedGems { get; set; }
+
+        /// <summary>Gets or sets the mines count.</summary>
+        /// <value>The mines count.</value>
+        public int MinesCount { get; set; } // Number of mines to place
+
 
         public GameLogic()
         {
-            layout = new string[gridSize * gridSize]; // Initialize array for 5x5 grid
+            layout = new string[GridSize * GridSize]; // Initialize array for 5x5 grid
             InitializeLayout(); // Initialize layout with 'g'
         }
 
@@ -54,12 +69,12 @@ namespace OpenSteakWPF
 
         public double getCashoutMultiplier()
         {
-            double Payout = 1;
-            for (int i = 0; i < MinesCount; i++)
+            double payout = 1;
+            for (int i = 0; i < this.MinesCount; i++)
             {
-                Payout = Payout * ((gridSize * gridSize) - RevealedGems - i) / ((gridSize * gridSize) - i);
+                payout = payout * ((GridSize * GridSize) - RevealedGems - i) / ((GridSize * GridSize) - i);
             }
-            return Math.Round(0.99 / Payout, 2);
+            return Math.Round(0.99 / payout, 2);
         }
 
         private void InitializeLayout()
@@ -78,7 +93,7 @@ namespace OpenSteakWPF
             int index = random.Next(layout.Length);
 
             // Introduce bias based on the house edge
-            if (random.NextDouble() < houseEdge)
+            if (random.NextDouble() < HouseEdge)
             {
                 // Apply bias to select an index in a specific region more frequently
                 int offset = random.Next(5); // Small offset for bias
@@ -87,5 +102,7 @@ namespace OpenSteakWPF
 
             return index;
         }
+
+       
     }
 }

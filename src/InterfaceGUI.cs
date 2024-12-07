@@ -1,31 +1,49 @@
 ﻿namespace OpenSteakWPF
 {
-    /*
-     * This file is neccesarry to provide an interface between the GUI_Bridge and GameAPI
-     * These functions are called by GameAPI to trigger GUI changes accordingly.
-     */
-    public interface InterfaceGUI
+
+    /// <summary>
+    ///   <br />
+    /// </summary>
+    public interface INterfaceGUI
     {
-        void initializeMinesAmountComboBox();
-        void initializeGrid(bool enableInteraction);
-        void revealMines();
-        void updateMultiplier();
-        void updateBalance();
-        void enableCashout();
+        /// <summary>Initializes the mines amount ComboBox.</summary>
+        void InitializeMinesAmountComboBox();
+
+        /// <summary>Initializes the mines amount ComboBox.</summary>
+        /// <param name="enableInteraction">Enable buttons to be clicked (revealed).</param>
+        void InitializeGrid(bool enableInteraction);
+
+        /// <summary>Initializes the mines amount ComboBox.</summary>
+        void RevealMines();
+
+        /// <summary>Initializes the mines amount ComboBox.</summary>
+        void UpdateMultiplier();
+
+        /// <summary>Initializes the mines amount ComboBox.</summary>
+        void UpdateBalance();
+
+        /// <summary>Initializes the mines amount ComboBox.</summary>
+        void EnableCashout();
 
         /// <summary>
         /// Changes the GUI components to their start state. This is when the game is restarted/stopped
         /// </summary>
-        void setComponentsToStart();
+        void SetComponentsToStart();
 
         /// <summary>
         /// Changes the GUI components to their cashout state. Note that this happens when game is started
         /// </summary>
-        void setComponentsToCashout();
+        void SetComponentsToCashout();
 
-        void restartBetAmount();
+        /// <summary>Initializes the mines amount ComboBox.</summary>
+        void RestartBetAmount();
+
+        /// <summary>Initializes the mines amount ComboBox.</summary>
+        /// <returns>A string value.</returns>
         string GetBetAmountFromTextField();
 
+        /// <summary>Initializes the mines amount ComboBox.</summary>
+        /// <returns>an integer value.</returns>
         int GetSelectedMinesAmount();
     }
 }

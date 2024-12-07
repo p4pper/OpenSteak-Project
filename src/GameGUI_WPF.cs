@@ -1,4 +1,8 @@
-﻿namespace OpenSteakWPF
+﻿// <copyright file="GameGUI_WPF.cs" company="openSteak">
+// Copyright (c) openSteak. All rights reserved.
+// </copyright>
+
+namespace OpenSteakWPF
 {
     using System;
     using System.Threading.Tasks;
@@ -61,7 +65,7 @@
         /// </summary>
         protected override void RevealAllMinesGUI()
         {
-            foreach (var child in minesGrid.Children)
+            foreach (var child in this.minesGrid.Children)
             {
                 if (child is Button btn)
                 {
@@ -131,7 +135,7 @@
         /// <summary>Updates the balance label in the GUI to reflect the current balance.</summary>
         protected override void UpdateBalanceGUI()
         {
-            this.balanceLabel.Content = "Balance: " + this.api.getBalance().ToString("0.0000");
+            this.balanceLabel.Content = "Balance: " + this.api.GetBalance().ToString("0.0000");
         }
 
         /// <summary>
@@ -228,11 +232,11 @@
             if ((string)clickedButton.Tag == "m")
             {
                 Task.Delay(new Random().Next(2000, 4000));
-                this.api.mineButtonClickedIsMine();
+                this.api.MineButtonClickedIsMine();
             }
             else
             {
-                this.api.mineButtonClickedIsGem();
+                this.api.MineButtonClickedIsGem();
             }
 
             clickedButton.Style = (Style)this.minesWindow.Resources["MineButtonRevealed"];

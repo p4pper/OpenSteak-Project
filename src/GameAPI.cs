@@ -1,82 +1,81 @@
-﻿// -------------------------------------------------------------------------------------------------
-// Software License: Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)
-// -------------------------------------------------------------------------------------------------
-//
-// You are free to:
-//
-// - Share: Copy and redistribute the material in any medium or format for non-commercial purposes
-//   only. You must give appropriate credit to the original creator, provide a link to the license, and
-//   indicate if changes were made. You may do so in any reasonable manner, but not in any way that
-//   suggests the creator endorses you or your use.
-//
-// You may not:
-// - Use the material for commercial purposes.
-// - Create derivative works based on the material. No modifications or adaptations of this code are allowed.
-//
-// License details: https://creativecommons.org/licenses/by-nc-nd/4.0/
-//
-// This software is provided "as-is" without any warranties. The creator is not liable for any damage or loss caused by the use or misuse of the software.
-//
-/*
- *  This files is essential for the functions of the game, it also triggers GUI events via GameGUI_Bridge
- */
+﻿// <copyright file="GameAPI.cs" company="openSteak">
+// Copyright (c) openSteak. All rights reserved.
+// </copyright>
 namespace OpenSteakWPF
 {
     using System;
     using System.IO;
     using System.Windows;
 
-    public class GameAPI : GameLogic //Based off core
+    /// <summary>The main file to handle the game's logic and trigger CoreGUI events.</summary>
+    public class GameAPI : GameLogic
     {
-        private const double defaultBalance = 5.0;
+        private const double DefaultBalance = 5.0;
         private double balance;
         private double currentBet = 0;
 
-        private enum GameState { Off, On, Lost, Won }
+        private INterfaceGUI gUI;
         private GameState gameState = GameState.Off;
 
-        private InterfaceGUI GUI;
-
-        public void initializeSelf(InterfaceGUI GUI)
+        private enum GameState
         {
-            this.GUI = GUI;
-            //
+            Off,
+            On,
+            Lost,
+            Won,
+        }
+
+        /// <summary>Initializes the self.
+        /// This must be called after a CoreGUI Based class is initialized with its components.</summary>
+        /// <param name="gUI">The gUI.</param>
+        public void InitializeSelf(INterfaceGUI gUI)
+        {
+            this.gUI = gUI;
+
             // Balance is stored as a text file. Check if it exists, or create a new one
-            //
             if (File.Exists("balance.txt"))
             {
-                this.balance = Double.Parse(File.ReadAllText("balance.txt"));
+                this.balance = double.Parse(File.ReadAllText("balance.txt"));
             }
             else
             {
                 // Set balance to default
-                File.WriteAllText("balance.txt", defaultBalance.ToString());
+                File.WriteAllText("balance.txt", DefaultBalance.ToString());
             }
 
-            GUI.initializeMinesAmountComboBox();
-            GUI.initializeGrid(false);
-            GUI.updateBalance();
+            gUI.InitializeMinesAmountComboBox();
+            gUI.InitializeGrid(false);
+            gUI.UpdateBalance();
         }
 
-        public int getGridSize()
+        /// <summary>Gets the size of the mines grid in a single-dimension.</summary>
+        /// <returns>
+        ///   <br />
+        /// </returns>
+        public int GetGridSize()
         {
-            return gridSize;
+            return GridSize;
         }
 
-        public double getBalance()
+        /// <summary>Gets the current balance.</summary>
+        /// <returns>
+        ///   <br />
+        /// </returns>
+        public double GetBalance()
         {
-            return balance;
+            return this.balance;
         }
 
-        public void startButton()
+        /// <summary>Starts the game.</summary>
+        public void StartGame()
         {
-            if (gameState == GameState.Off)
+            if (this.gameState == GameState.Off)
             {
                 // Check if bet amount is greater than zero
-                if ((currentBet > 0 && currentBet <= balance) || currentBet == 0)
+                if ((this.currentBet > 0 && this.currentBet <= this.balance) || this.currentBet == 0)
                 {
-                    GUI.setComponentsToCashout();
-                    RestartGame();
+                    this.gUI.SetComponentsToCashout();
+                    this.RestartGame();
                 }
                 else
                 {
@@ -84,94 +83,101 @@ namespace OpenSteakWPF
                     MessageBox.Show("Please place a valid bet.");
                 }
             }
-            else if (gameState == GameState.On && RevealedGems > 0)
+            else if (this.gameState == GameState.On && this.RevealedGems > 0)
             {
-                gameState = GameState.Won;
-                EndGame();
+                this.gameState = GameState.Won;
+                this.EndGame();
             }
+        }
+
+        /// <summary>Action if a Button clicked is a Gem.</summary>
+        public void MineButtonClickedIsGem()
+        {
+            this.RevealedGems++;
+            this.gUI.UpdateMultiplier();
+            this.CheckForWin();
         }
 
         // So you are wondering how does this get triggered?
         // Well, it's triggered by the GUI button
         //
         // I hate this hooking..
-        public void mineButtonClickedIsMine()
+        public void MineButtonClickedIsMine()
         {
-            GUI.revealMines();
-            gameState = GameState.Lost;
-            EndGame();
+            this.gUI.RevealMines();
+            this.gameState = GameState.Lost;
+            this.EndGame();
         }
 
-        public void mineButtonClickedIsGem()
-        {
-            RevealedGems++;
-            GUI.updateMultiplier();
-            CheckForWin();
-        }
-
-        private void CheckForWin()
-        {
-            // Check if all gems have been revealed.
-            bool isGameWon = RevealedGems == (gridSize * gridSize - MinesCount);
-            if (isGameWon)
-            {
-                gameState = GameState.Won;
-                EndGame();
-            }
-
-            if (RevealedGems == 1)
-            {
-                // Enable cashout button
-                GUI.enableCashout();
-            }
-        }
-
+        /// <summary>Restarts the game.</summary>
         public void RestartGame()
         {
-            if ((double.TryParse(GUI.GetBetAmountFromTextField(), out currentBet) && currentBet > 0) || currentBet == 0)
+            if ((double.TryParse(
+                this.gUI.GetBetAmountFromTextField(),
+                out this.currentBet)
+                &&
+                this.currentBet > 0)
+                ||
+                this.currentBet == 0)
             {
-                if (currentBet <= balance)
+                if (this.currentBet <= this.balance)
                 {
-                    balance -= currentBet;
-                    GUI.updateBalance();
+                    this.balance -= this.currentBet;
+                    this.gUI.UpdateBalance();
 
-                    RevealedGems = 0;
-                    gameState = GameState.On;
-                    MinesCount = GUI.GetSelectedMinesAmount();
-                    Start();
-                    GUI.initializeGrid(true);
+                    this.RevealedGems = 0;
+                    this.gameState = GameState.On;
+                    this.MinesCount = this.gUI.GetSelectedMinesAmount();
+                    this.Start();
+                    this.gUI.InitializeGrid(true);
                 }
                 else
                 {
                     MessageBox.Show("Insufficient balance.");
-                    GUI.restartBetAmount();
-                    currentBet = 0;
+                    this.gUI.RestartBetAmount();
+                    this.currentBet = 0;
                 }
             }
             else
             {
                 MessageBox.Show("Invalid bet amount.");
-                GUI.restartBetAmount();
-                currentBet = 0;
+                this.gUI.RestartBetAmount();
+                this.currentBet = 0;
+            }
+        }
+
+        private void CheckForWin()
+        {
+            // Check if all gems have been revealed.
+            bool isGameWon = this.RevealedGems == ((GridSize * GridSize) - this.MinesCount);
+            if (isGameWon)
+            {
+                this.gameState = GameState.Won;
+                this.EndGame();
+            }
+
+            if (this.RevealedGems == 1)
+            {
+                // Enable cashout button
+                this.gUI.EnableCashout();
             }
         }
 
         private void EndGame()
         {
+            this.gUI.RevealMines();
 
-            GUI.revealMines();
-
-            if (gameState == GameState.Won)
+            if (this.gameState == GameState.Won)
             {
-                balance += currentBet * getCashoutMultiplier();
-                balance = Math.Round(balance, 2);
+                this.balance += this.currentBet * this.getCashoutMultiplier();
+                this.balance = Math.Round(this.balance, 2);
             }
 
             // GUI Events
-            GUI.updateBalance();
-            GUI.setComponentsToStart();
-            gameState = GameState.Off;
-            File.WriteAllText("balance.txt", balance.ToString());
+            this.gUI.UpdateBalance();
+            this.gUI.SetComponentsToStart();
+            this.gameState = GameState.Off;
+            File.WriteAllText("balance.txt", this.balance.ToString());
         }
     }
 }

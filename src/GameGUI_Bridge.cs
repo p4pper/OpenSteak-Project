@@ -1,9 +1,12 @@
 ﻿namespace OpenSteakWPF
 {
-    public class GameGUI_Bridge : InterfaceGUI
+    /// <summary>
+    ///   <br />
+    /// </summary>
+    public class GameGUI_Bridge : INterfaceGUI
     {
-        protected int gridSize;
-        protected string[] layout;
+        protected readonly int gridSize;
+        protected readonly string[] layout;
 
         protected GameAPI api;
 
@@ -16,14 +19,14 @@
             // Hook GUI Events with API
             this.api = api;
 
-            this.gridSize = api.getGridSize();
+            this.gridSize = api.GetGridSize();
             this.layout = api.GetLayout();
         }
 
         /// <summary>
         /// Restarts the Bet Text field to zero.
         /// </summary>
-        public void restartBetAmount()
+        public void RestartBetAmount()
         {
             this.RestartBetAmountGUI();
         }
@@ -50,7 +53,7 @@
         /// Initializes the combobox field by adding integers from 1 to 24 as items.
         /// This is optional call and needs GUI Child Hook.
         /// </summary>
-        public void initializeMinesAmountComboBox()
+        public void InitializeMinesAmountComboBox()
         {
             this.InitializeMinesAmountComboBoxGUI();
         }
@@ -60,7 +63,7 @@
         /// This is optional call and needs GUI Child Hook.
         /// </summary>
         /// <param name="enableInteraction">Enable buttons to be clicked (revealed).</param>
-        public void initializeGrid(bool enableInteraction)
+        public void InitializeGrid(bool enableInteraction)
         {
             this.InitializeGridGUI(enableInteraction);
         }
@@ -68,7 +71,7 @@
         /// <summary>
         /// Reveal all mines through GUI Child hook.
         /// </summary>
-        public void revealMines()
+        public void RevealMines()
         {
             this.RevealAllMinesGUI();
         }
@@ -76,7 +79,7 @@
         /// <summary>
         /// Updates the multiplier text label through GUI Child hook.
         /// </summary>
-        public void updateMultiplier()
+        public void UpdateMultiplier()
         {
             this.UpdateMultiplierGUI();
         }
@@ -84,7 +87,7 @@
         /// <summary>
         /// Updates the balance text label through GUI Child hook.
         /// </summary>
-        public void updateBalance()
+        public void UpdateBalance()
         {
             this.UpdateBalanceGUI();
         }
@@ -92,29 +95,34 @@
         /// <summary>
         /// Enable the cashout button through GUI Child hook.
         /// </summary>
-        public void enableCashout()
+        public void EnableCashout()
         {
             this.EnableCashoutGUI();
         }
 
-        public void setComponentsToStart()
+        /// <summary>Changes the GUI components to their start state. This is when the game is restarted/stopped.</summary>
+        public void SetComponentsToStart()
         {
             this.SetComponentsToStartGUI();
         }
 
-        public void setComponentsToCashout()
+        /// <summary>Changes the GUI components to their cashout state.</summary>
+        public void SetComponentsToCashout()
         {
             this.SetComponentsToCashoutGUI();
         }
 
+        /// <summary>Restarts the bet amount GUI.</summary>
         protected virtual void RestartBetAmountGUI()
         {
         }
 
+        /// <summary>Initializes the mines amount ComboBox GUI.</summary>
         protected virtual void InitializeMinesAmountComboBoxGUI()
         {
         }
 
+        /// <summary>Sets the components to start GUI.</summary>
         protected virtual void SetComponentsToStartGUI()
         {
         }
@@ -126,29 +134,48 @@
         {
         }
 
+        /// <summary>Gets the bet amount GUI.</summary>
+        /// <returns>
+        ///   <br />
+        /// </returns>
         protected virtual string GetBetAmountGUI()
         {
             return "No-Bet-Amount, Child-Did-Not-Pass-Value-GUI-Event";
         }
 
+        /// <summary>Gets the selected mines amount GUI.</summary>
+        /// <returns>
+        ///   <br />
+        /// </returns>
         protected virtual int GetSelectedMinesAmountGUI()
         {
             return 0;
         }
 
+        /// <summary>Enables the cashout GUI.</summary>
         protected virtual void EnableCashoutGUI()
-        { }
+        {
+        }
 
+        /// <summary>Reveals all mines GUI.</summary>
         protected virtual void RevealAllMinesGUI()
-        { }
+        {
+        }
 
+        /// <summary>Updates the multiplier GUI.</summary>
         protected virtual void UpdateMultiplierGUI()
-        { }
+        {
+        }
 
+        /// <summary>Updates the balance GUI.</summary>
         protected virtual void UpdateBalanceGUI()
-        { }
+        {
+        }
 
+        /// <summary>Initializes the grid GUI.</summary>
+        /// <param name="enableMinesInteraction">if set to <c>true</c> [enable mines interaction].</param>
         protected virtual void InitializeGridGUI(bool enableMinesInteraction)
-        { }
+        {
+        }
     }
 }
