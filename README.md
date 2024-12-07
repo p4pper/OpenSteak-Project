@@ -42,6 +42,9 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 ![Untitled-Project](https://github.com/user-attachments/assets/4ff5ba89-71a5-494c-89b0-77be984ec80b)  
+
+![Built with WPF](https://github.com/harethpy/OpenSteak-Mines-WPF)
+
 I wanted to create something that combined learning, ethical awareness, and technical practice.   
 This project is a Minesweeper-inspired game with probability in-mind, as well as bet amount and multiplier amount that increases on every gem opened.
 I have an explanation on how this works, and why actually you'll never profit or win off this in the long-term.
