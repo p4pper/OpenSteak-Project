@@ -63,6 +63,7 @@ namespace OpenSteakMines
         /// </returns>
         public double GetBalance()
         {
+            this.balance = Math.Round(this.balance, 2);
             return this.balance;
         }
 
