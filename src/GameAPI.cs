@@ -67,7 +67,7 @@ namespace OpenSteakMines
             return this.balance;
         }
 
-        /// <summary>Starts the game.</summary>
+        /// <summary>Starts the game. Can also be used to finalize game</summary>
         public void StartGame()
         {
             if (this.gameState == GameState.Off)
